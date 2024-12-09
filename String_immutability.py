@@ -1,7 +1,10 @@
 def test_string_immutability():
-    s = "hello"
+    password = input("Enter the Password: ")
+    pass_original = password
     try:
-        s[0] = "H"
+        password[0] = "S"  # Attempt to modify the string
         assert False, "Strings should be immutable"
     except TypeError:
-        assert True, "String immutability enforced in Python"
+        assert pass_original == password, "Original string remains unchanged"
+
+test_string_immutability()

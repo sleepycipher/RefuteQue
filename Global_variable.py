@@ -1,10 +1,14 @@
+def calculate_area():
+    length = int(input("Enter the Length: "))
+    width = int(input("Enter the Width: "))
+    area = length * width
+    return area
+
 def test_variable_scope():
-    def local_scope():
-        x = 10
-        return x
-    local_scope()
+    print(calculate_area())
     try:
-        x  # Accessing x outside the function
-        assert False, "Variable x should not be accessible globally"
+        length  # Trying to access local variable
+        assert False, "Local variable 'length' should not be accessible globally"
     except NameError:
-        assert True, "Variable scoping in Python works as expected"
+        assert True, "Variable scoping works correctly"
+test_variable_scope()

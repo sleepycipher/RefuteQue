@@ -1,24 +1,29 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
-int test_switch_case() {
-    int num = 2;
+int unit_conversion() {
+    int choice;
     char *result;
-    switch (num) {
+    printf("Enter the Number 2 for Miles: ");
+    scanf("%d", &choice);
+    switch (choice) {
         case 1:
-            result = "One";
+            result = "kilometers";
+            printf("Kilometers");
             break;
         case 2:
-            result = "Two";
+            result = "Miles";
+            printf("Miles");
             break;
         default:
-            result = "Other";
-    }
-    assert(strcmp(result, "Two") == 0); // Switch works with integers only
+            result = "Invalid choice";
+    
+    assert(strcmp(result, "Miles") == 0); // Switch works with integers only
     printf("Successfully Verified");
     return 0;
+    }
 }
 int main(){
-    test_switch_case();
+    unit_conversion();
     return 0;
 }
